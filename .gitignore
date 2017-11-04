@@ -1,11 +1,5 @@
-# Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-
-# Email spool folder
-/app/spool/*
+### PhpStorm ###
+.idea/
 
 # Cache, session files and logs (Symfony3)
 /var/cache/*
@@ -26,9 +20,13 @@
 !bin/console
 !bin/symfony_requirements
 
+/vendor/
+/node_modules/
+
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
+/web/assets/
 
 # PHPUnit
 /app/phpunit.xml
@@ -39,3 +37,6 @@
 
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
+
+# Vagrant
+/.vagrant/
