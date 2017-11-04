@@ -40,3 +40,6 @@
 
 # Vagrant
 /.vagrant/
+
+# misc
+.web-server-pid
