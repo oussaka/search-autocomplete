@@ -1,12 +1,23 @@
 {
+  "name": "SymfonyWebpackEncore",
+  "version": "1.0.0",
+  "description": "Integrate Webpack in your Symfony application with Webpack Encore",
+  "main": "index.js",
+  "author": "oussaka <oussaka@users.noreply.github.com>",
+  "license": "UNLICENSED",
   "devDependencies": {
-    "@symfony/webpack-encore": "^0.9.1",
+    "@symfony/webpack-encore": "^0.16.0",
     "axios": "^0.16.2",
     "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
     "tether": "^1.4.0"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/encore dev --watch",
+    "prod": "./node_modules/.bin/encore production",
+    "packages": "npm list -depth=0"
   }
 }

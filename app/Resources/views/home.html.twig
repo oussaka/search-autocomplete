@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <h1 class="mt-3">Items</h1>
+
+    <div class="mb-3">
+        <a href="{{ path('homepage') }}" class="btn btn-success">
+            <i class="fa fa-plus"></i>
+            Add
+        </a>
+    </div>
+
+    <div class="container">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid assumenda, commodi cum deleniti dicta dolore fuga minima molestiae nisi odio, quas recusandae tempora. Aliquid eligendi fuga nostrum repudiandae tempora!
+    </div>
+
+    {% for item in [] %}
+        <div class="card mb-3">
+            <div class="card-block">
+
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

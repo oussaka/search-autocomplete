@@ -3,11 +3,41 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('assets/style.css') }}" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            <div id="app">
+
+                <div class="container-fluid">
+                    {% block container %}{% endblock %}
+                </div>
+
+                <div class="alerts">
+                    {% for label, messages in app.flashes %}
+                        {% for message in messages %}
+                            <div class="alert alert-dismissible fade alert-{{ label }} show" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            {% block footer %}
+                <footer class="footer">
+                    <img src="{{ asset('') }}" alt="">
+                    <h5></h5>
+                </footer>
+            {% endblock %}
+
+        {% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('assets/app.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

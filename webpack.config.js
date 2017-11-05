@@ -17,8 +17,12 @@ Encore
   .addStyleEntry('style', './assets/sass/app.scss')
 
   // allow sass/scss files to be processed
-  .enableSassLoader({
-    resolve_url_loader: false
+  .enableSassLoader(function(loaderOptions) {
+      // this is our special option
+      loaderOptions.resolve_url_loader = false
+
+      // this is an option to be passed to sass-loader
+      // loaderOptions.includePaths = []
   })
 
   // allow legacy applications to use $/jQuery as a global variable
@@ -33,9 +37,12 @@ Encore
 
   // create hashed filenames (e.g. app.abc123.css)
   // .enableVersioning()
-
-  .enableVueLoader()
 ;
 
+const config = Encore.getWebpackConfig();
+config.watchOptions = {
+    poll: true,
+};
+
 // export the final configuration
-module.exports = Encore.getWebpackConfig();
+module.exports = config;
