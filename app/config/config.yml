@@ -67,3 +67,39 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+fos_elastica:
+    clients:
+        default: { host: "%elasticsearch_host%", port: "%elasticsearch_port%" }
+    indexes:
+        bank:
+            finder: ~
+            settings:
+                index:
+                    analysis:
+                        analyzer:
+                            name_analyzer:
+                                type: custom
+                                tokenizer: standard
+                                filter: [standard, lowercase, asciifolding, elision]
+            types:
+                account:
+                    properties:
+                        name_suggest:
+                            type: completion
+                            analyzer: name_analyzer
+                            search_analyzer: name_analyzer
+                        id:
+                            type: keyword
+                        firstname:
+                            type: keyword
+                        lastname:
+                            type: keyword
+                        age:
+                            type: keyword
+                    persistence:
+                        driver: orm
+                        model: AppBundle\Entity\Accounts
+                        provider: ~
+                        listener: ~
+                        finder: ~
