@@ -12,6 +12,36 @@
         {% block body %}
             <div id="app">
 
+                <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Elastica Symfony</a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Page 2.
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">page 2-1</a>
+                                    <a class="dropdown-item" href="#">page 2-2</a>
+                                    <a class="dropdown-item" href="#">page 2-3</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
                 <div class="container-fluid">
                     {% block container %}{% endblock %}
                 </div>
@@ -30,8 +60,10 @@
 
             {% block footer %}
                 <footer class="footer">
-                    <img src="{{ asset('') }}" alt="">
-                    <h5></h5>
+                    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+                        <img src="{{ asset('') }}" alt="">
+                        <p>Copyright &copy; Company {{ 'now'|date('Y') }}</p>
+                    </nav>
                 </footer>
             {% endblock %}
 
