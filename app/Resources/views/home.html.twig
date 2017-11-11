@@ -3,13 +3,6 @@
 {% block container %}
     <h1 class="mt-3">Items</h1>
 
-    <div class="mb-3">
-        <a href="{{ path('homepage') }}" class="btn btn-success">
-            <i class="fa fa-plus"></i>
-            Add
-        </a>
-    </div>
-
     {% for item in [] %}
         <div class="card mb-3">
             <div class="card-block">
@@ -21,8 +14,20 @@
 
     {% block content %}
         <header class="jumbotron hero-spacer">
-            <input class="search"></input>
+            <select class="search"></select>
         </header>
+
+        <div class="card card-inverse card-primary mb-3 text-center">
+            <div class="card-block">
+                <blockquote class="card-blockquote">
+                    <div class="selected"></div>
+                    <footer>
+                        <div class="email-selected"></div>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+
     {% endblock %}
 
 

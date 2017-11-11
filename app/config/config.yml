@@ -72,7 +72,7 @@ fos_elastica:
     clients:
         default: { host: "%elasticsearch_host%", port: "%elasticsearch_port%" }
     indexes:
-        bank:
+        app:
             finder: ~
             settings:
                 index:
@@ -83,7 +83,7 @@ fos_elastica:
                                 tokenizer: standard
                                 filter: [standard, lowercase, asciifolding, elision]
             types:
-                account:
+                accounts:
                     properties:
                         name_suggest:
                             type: completion
@@ -91,11 +91,11 @@ fos_elastica:
                             search_analyzer: name_analyzer
                         id:
                             type: keyword
-                        firstname:
+                        givenname:
                             type: keyword
-                        lastname:
+                        username:
                             type: keyword
-                        age:
+                        emailaddress:
                             type: keyword
                     persistence:
                         driver: orm
